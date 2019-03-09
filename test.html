@@ -1,0 +1,32 @@
+<html>
+    <head>
+	    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script>
+		    function chk() {
+			    var fname=document.getElementById('fname').value;
+				var lname=document.getElementById('lname').value;
+				var dataString='fname='+ fname + '&lname='+lname;
+				$.ajax({
+				    type:"post",
+					url:"send.php",
+					data:dataString,
+					cashe:false,
+					success: function(html){
+					    $('#msg').html(html);
+					}
+				});
+			    return false;
+			}
+		</script>
+	</head>
+	<body>
+	    <form>
+		    <input type="text" id="fname">
+			<br/><br/>
+			<input type="text" id="lname">
+			<br/><br/>
+			<input type="submit" value="submit" onclick="return chk()">
+		</form>
+		<div id="msg"></div>
+	</body>
+</html>
