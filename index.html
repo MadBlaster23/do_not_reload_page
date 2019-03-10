@@ -1,45 +1,38 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-function post()
-{
-  var name = document.getElementById("name").value;
-  var message = document.getElementById("message").value;
-  if(name && message)
-  {
-    $.ajax
-    ({
-      type: 'post',
-      url: 'post_data.php',
-      data:
-      {
-         user_name:name,
-		 user_message:message
-      },
-      success: function (response)
-      {
-	    document.getElementById("status").innerHTML="Form Submitted Successfully";;
-
-      }
-    });
-  }
-
-  return false;
-}
-</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function post() {
+            var name = document.getElementById("name").value;
+            var message = document.getElementById("message").value;
+            if(name && message) {
+                $.ajax( {
+                    type: 'post',
+                    url: 'post_data.php',
+                    data: {
+                        user_name:name,
+		                user_message:message
+                    },
+                    success: function (response) {
+	                    document.getElementById("status").innerHTML="Form Submitted Successfully";
+                    }
+                });
+             }
+            return false;
+        }
+    </script>
+</head>
 <body>
-<form method='post' action="" onsubmit="return post();">
-	<input type="text" id="name" placeholder="Name" class="input-box"></br>
-	<input type="text" id="message" placeholder="Message" class="input-box"></br>
-	<input type="submit" id="submit" value="Submit">
-</form>
-<div id="status"></div>
-</div>
+    <form method='post' action="" onsubmit="return post();">
+	    <input type="text" id="name" placeholder="Name" class="input-box"></br>
+	    <input type="text" id="message" placeholder="Message" class="input-box"></br>
+	    <input type="submit" id="submit" value="Submit">
+    </form>
+    <div id="status"></div>
 </body>
 </html>
