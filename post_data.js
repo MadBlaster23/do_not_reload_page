@@ -13,6 +13,8 @@ function post() {
 	            document.getElementById("status").innerHTML="Form Submitted Successfully";
             }
         });
+
     }
+    document.getElementById("myForm").reset();
     return false;
 }
