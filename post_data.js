@@ -9,7 +9,7 @@ function post() {
     var date = document.getElementById("date").value;
     var comments = document.getElementById("comments").value;
 
-    if(firstname && lastname && email && phone && address1 && address2 && number && date && comments) {
+    if(firstname && lastname && email && phone && address1 && address2 && number && date || comments) {
         $.ajax( {
             type: 'post',
             url: 'post_data.php',
