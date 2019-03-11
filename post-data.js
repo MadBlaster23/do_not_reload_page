@@ -12,7 +12,7 @@ function post() {
     if(firstname && lastname && email && phone && address1 && address2 && number && date || comments) {
         $.ajax( {
             type: 'post',
-            url: 'post_data.php',
+            url: 'post-data.php',
             data: {
                 first_name:firstname,
 		        last_name:lastname,
