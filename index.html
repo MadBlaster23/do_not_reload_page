@@ -6,10 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="email-validation.js"></script>
     <script type="text/javascript" src="post-data.js"></script>
 </head>
 <body>
-    <form method='post' id="myForm" action="" onsubmit="return post();">
+    <form method='post' name="form" id="myForm" action="" onsubmit="return post();">
         <input type="text" id="firstname" name="firstname" placeholder="First name *" required></br>
         <input type="text" id="lastname" name="lastname" placeholder="Last name *" required></br>
         <input type="email" id="email" name="email" placeholder="Email *" required></br>
@@ -26,7 +29,7 @@
         </select></br>
         <input type="text" id="date" name="date" class="date" placeholder="Moving date *" required></br>
         <textarea id="comments" name="comments" placeholder="Any additional details" maxlength="500"></textarea></br>
-        <input type="submit" id="submit" value="Submit">
+        <input type="submit" id="submit" value="Submit" onclick="return ValidateEmail(document.form.email);">
 
 
     </form>
